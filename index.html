@@ -316,4 +316,783 @@ header {
 }
 
 .hero p {
-    color: #b
+    color: #bdbdbd;
+
+    max-width: 620px;
+
+    margin: auto;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 16px 27px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: .3s;
+
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #d4af37;
+    color: #080808;
+
+    box-shadow:
+        0 8px 30px rgba(212,175,55,.18);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+
+    background: #f0cc55;
+}
+
+.btn-secondary {
+    color: white;
+
+    border: 1px solid #444;
+
+    background: rgba(255,255,255,.04);
+}
+
+.btn-secondary:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+section {
+    padding: 95px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.section-title small {
+    color: #d4af37;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    font-weight: bold;
+}
+
+.section-title h2 {
+    font-size: 40px;
+
+    margin-top: 10px;
+}
+
+.section-title p {
+    color: #888;
+
+    margin-top: 12px;
+}
+
+/* =========================
+   SERVIÇOS
+========================= */
+
+.services {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(230px,1fr));
+
+    gap: 18px;
+}
+
+.service {
+    position: relative;
+
+    padding: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid rgba(255,255,255,.09);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition: .3s;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(212,175,55,.5);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.35);
+}
+
+.service::before {
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(212,175,55,.16),
+            transparent 70%
+        );
+
+    right: -25px;
+    top: -25px;
+}
+
+.service h3 {
+    font-size: 18px;
+
+    margin-bottom: 18px;
+}
+
+.price {
+    font-size: 32px;
+
+    font-weight: 900;
+
+    color: #d4af37;
+}
+
+.price small {
+    font-size: 14px;
+
+    color: #777;
+}
+
+/* =========================
+   DOMICÍLIO
+========================= */
+
+.home-service {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212,175,55,.13),
+            rgba(255,255,255,.035)
+        );
+
+    border: 1px solid rgba(212,175,55,.25);
+
+    border-radius: 20px;
+
+    padding: 45px;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.home-service::before {
+    content: "TC";
+
+    position: absolute;
+
+    font-size: 180px;
+
+    font-weight: 900;
+
+    color: rgba(255,255,255,.025);
+
+    right: -20px;
+    bottom: -65px;
+}
+
+.home-service h2 {
+    font-size: 34px;
+
+    margin-bottom: 12px;
+}
+
+.home-service h2 span {
+    color: #d4af37;
+}
+
+.home-service p {
+    color: #aaa;
+
+    line-height: 1.7;
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 18px;
+}
+
+.info-card {
+    background: #0c0c0c;
+
+    border: 1px solid #202020;
+
+    padding: 28px;
+
+    border-radius: 15px;
+}
+
+.info-card span {
+    color: #d4af37;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+}
+
+.info-card h3 {
+    margin-top: 10px;
+
+    font-size: 20px;
+}
+
+.info-card p {
+    margin-top: 8px;
+
+    color: #999;
+
+    line-height: 1.6;
+}
+
+/* =========================
+   INSTAGRAM
+========================= */
+
+.instagram {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.65),
+            rgba(0,0,0,.9)
+        );
+}
+
+.instagram-box {
+    max-width: 650px;
+
+    margin: auto;
+
+    padding: 45px 25px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(212,175,55,.2);
+
+    background: rgba(255,255,255,.035);
+}
+
+.instagram-box h2 {
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+.instagram-box p {
+    color: #999;
+
+    margin-bottom: 25px;
+}
+
+.instagram-link {
+    display: inline-block;
+
+    color: #d4af37;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #191919;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 13px;
+}
+
+footer strong {
+    color: #d4af37;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px) {
+
+    .nav {
+        justify-content: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .main-logo {
+        gap: 8px;
+    }
+
+    .barber-pole {
+        width: 30px;
+        height: 90px;
+    }
+
+    .letter {
+        font-size: 85px;
+    }
+
+    .subtitle {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    section {
+        padding: 70px 18px;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+    .home-service {
+        padding: 35px 22px;
+    }
+
+    .home-service h2 {
+        font-size: 28px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     MENU
+========================= -->
+
+<header>
+
+    <nav class="nav">
+
+        <div class="nav-logo">
+
+            <div class="logo-mini">
+                TC
+            </div>
+
+            <span>TC BARBER</span>
+
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#servicos">Serviços</a>
+
+            <a href="#domicilio">Domicílio</a>
+
+            <a href="#contato">Contato</a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="main-logo">
+
+            <div class="letter">T</div>
+
+            <div class="barber-pole"></div>
+
+            <div class="letter">C</div>
+
+        </div>
+
+        <div class="subtitle">
+            BARBEARIA • ESTILO • PRECISÃO
+        </div>
+
+        <h1>
+            TC <span>BARBER</span>
+        </h1>
+
+        <p>
+            Seu estilo começa no detalhe.
+            Cortes, barba e acabamento com atenção
+            em cada detalhe para você sair na régua.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                class="btn btn-primary"
+                href="https://wa.me/5533998047605?text=Olá%20TC%20Barber!%20Quero%20agendar%20um%20horário."
+            >
+                AGENDAR HORÁRIO
+            </a>
+
+            <a
+                class="btn btn-secondary"
+                href="#servicos"
+            >
+                VER SERVIÇOS
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVIÇOS
+========================= -->
+
+<section id="servicos">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>NOSSOS SERVIÇOS</small>
+
+            <h2>Serviços & Preços</h2>
+
+            <p>
+                Escolha seu serviço e agende seu horário.
+            </p>
+
+        </div>
+
+
+        <div class="services">
+
+
+            <div class="service">
+
+                <h3>Corte Social</h3>
+
+                <div class="price">
+                    R$ 20
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>Corte Degradê</h3>
+
+                <div class="price">
+                    R$ 25
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>Barba</h3>
+
+                <div class="price">
+                    R$ 15
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>Sobrancelha</h3>
+
+                <div class="price">
+                    R$ 7
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>Corte + Sobrancelha</h3>
+
+                <div class="price">
+                    R$ 30
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>Corte + Sobrancelha + Barba</h3>
+
+                <div class="price">
+                    R$ 50
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DOMICÍLIO
+========================= -->
+
+<section id="domicilio">
+
+    <div class="container">
+
+        <div class="home-service">
+
+            <h2>
+                Atendimento <span>a domicílio</span>
+            </h2>
+
+            <p>
+                Quer cortar o cabelo sem sair de casa?
+                A TC Barber também atende a domicílio,
+                sem cobrança de taxa adicional.
+            </p>
+
+            <br>
+
+            <a
+                class="btn btn-primary"
+                href="https://wa.me/5533998047605?text=Olá%20TC%20Barber!%20Quero%20agendar%20um%20horário%20a%20domicílio."
+            >
+                AGENDAR DOMICÍLIO
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INFORMAÇÕES
+========================= -->
+
+<section id="contato">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>ONDE ESTAMOS</small>
+
+            <h2>Informações</h2>
+
+        </div>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-card">
+
+                <span>ENDEREÇO</span>
+
+                <h3>Rua José Ferino de Matos</h3>
+
+                <p>
+                    Venha conhecer a TC Barber.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>HORÁRIO</span>
+
+                <h3>13:00 às 19:00</h3>
+
+                <p>
+                    Consulte a disponibilidade
+                    pelo WhatsApp.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>AGENDAMENTO</span>
+
+                <h3>WhatsApp</h3>
+
+                <p>
+                    Agende seu horário de forma rápida
+                    e fácil.
+                </p>
+
+                <br>
+
+                <a
+                    class="btn btn-primary"
+                    href="https://wa.me/5533998047605?text=Olá%20TC%20Barber!%20Quero%20agendar%20um%20horário."
+                >
+                    FALAR NO WHATSAPP
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INSTAGRAM
+========================= -->
+
+<section class="instagram">
+
+    <div class="container">
+
+        <div class="instagram-box">
+
+            <h2>
+                Siga a TC Barber
+            </h2>
+
+            <p>
+                Acompanhe os cortes, trabalhos e novidades.
+            </p>
+
+            <a
+                class="instagram-link"
+                href="https://www.instagram.com/tc_barber_00/"
+                target="_blank"
+            >
+                @tc_barber_00
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 <strong>TC Barber</strong>.
+        Todos os direitos reservados.
+    </p>
+
+</footer>
+
+
+</body>
+                    </html>
