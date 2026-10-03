@@ -9,6 +9,7 @@
 <meta name="description" content="TC Barber - Seu estilo começa aqui. Agende seu horário.">
 
 <style>
+
 :root{
     --bg:#070707;
     --bg2:#0d0d0d;
@@ -58,7 +59,10 @@ body:before{
     padding:18px 16px 45px;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     min-height:430px;
@@ -127,7 +131,10 @@ body:before{
     flex:1;
 }
 
-/* BUTTONS */
+
+/* =========================
+   BOTÕES
+========================= */
 
 .btn{
     display:flex;
@@ -158,7 +165,10 @@ body:before{
     background:#151515;
 }
 
-/* CARDS */
+
+/* =========================
+   CARDS
+========================= */
 
 .card{
     background:
@@ -184,449 +194,12 @@ body:before{
     margin-bottom:16px;
 }
 
-/* SERVICES */
 
-.service{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
-    padding:17px 0;
-    border-bottom:1px solid var(--line);
-}
-
-.service:last-child{
-    border-bottom:0;
-    padding-bottom:2px;
-}
-
-.service-left{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.service-icon{
-    width:38px;
-    height:38px;
-    border-radius:12px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#201b10;
-    border:1px solid #44371e;
-    font-size:17px;
-}
-
-.name{
-    font-weight:700;
-    font-size:14px;
-}
-
-.price{
-    color:var(--gold2);
-    font-weight:900;
-    font-size:16px;
-    white-space:nowrap;
-}
-
-/* AGENDAMENTO */
-
-.booking{
-    text-align:center;
-    padding:30px 22px;
-    border-color:#4d3c1c;
-    background:
-        radial-gradient(circle at top,#33250e,#121212 65%);
-}
-
-.booking h2{
-    font-size:24px;
-}
-
-.booking .section-sub{
-    max-width:350px;
-    margin:7px auto 20px;
-}
-
-.whatsapp{
-    background:var(--green);
-    color:#06190c;
-    box-shadow:0 12px 30px #25d36625;
-}
-
-.whatsapp span{
-    margin-right:8px;
-    font-size:19px;
-}
-
-/* INFO */
-
-.info-row{
-    padding:17px 0;
-    border-bottom:1px solid var(--line);
-    line-height:1.5;
-}
-
-.info-row:last-child{
-    border-bottom:0;
-    padding-bottom:0;
-}
-
-.label{
-    display:block;
-    color:var(--gold2);
-    font-size:10px;
-    font-weight:900;
-    letter-spacing:1.8px;
-    text-transform:uppercase;
-    margin-bottom:5px;
-}
-
-.info-value{
-    color:#eee;
-    font-size:14px;
-}
-
-.instagram{
-    margin-top:10px;
-    background:#fff;
-    color:#111;
-}
-
-/* DESTAQUE */
+/* =========================
+   DESTAQUES
+========================= */
 
 .highlight{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:10px;
-    margin:16px 0;
-}
-
-.highlight-box{
-    padding:18px 14px;
-    text-align:center;
-    background:#111;
-    border:1px solid var(--line);
-    border-radius:18px;
-}
-
-.highlight-number{
-    display:block;
-    color:var(--gold2);
-    font-size:20px;
-    font-weight:950;
-    margin-bottom:5px;
-}
-
-.highlight-text{
-    color:#999;
-    font-size:11px;
-}
-
-/* FOOTER */
-
-.footer{
-    text-align:center;
-    color:#666;
-    font-size:11px;
-    line-height:1.6;
-    margin-top:28px;
-}
-
-.footer strong{
-    color:#999;
-}
-
-/* ANIMAÇÃO */
-
-@keyframes appear{
-    from{
-        opacity:0;
-        transform:translateY(12px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* CELULAR */
-
-@media(max-width:430px){
-
-    .hero{
-        min-height:400px;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-    }
-
-    .card{
-        padding:21px 18px;
-        border-radius:21px;
-    }
-
-    .service{
-        padding:15px 0;
-    }
-
-    .name{
-        font-size:13px;
-    }
-
-    .price{
-        font-size:15px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<!-- HERO -->
-
-<header class="hero">
-
-    <div class="badge">✦ BARBEARIA</div>
-
-    <div class="logo">
-        TC <span>BARBER</span>
-    </div>
-
-    <div class="hero-line"></div>
-
-    <p class="tagline">
-        Seu estilo começa aqui.
-        <br>
-        Corte, cuidado e presença.
-    </p>
-
-    <div class="hero-buttons">
-        <a class="btn btn-gold" href="#servicos">
-            VER SERVIÇOS
-        </a>
-
-        <a class="btn btn-dark" href="#agendamento">
-            AGENDAR
-        </a>
-    </div>
-
-</header>
-
-
-<!-- DESTAQUES -->
-
-<div class="highlight">
-
-    <div class="highlight-box">
-        <span class="highlight-number">R$ 20</span>
-        <span class="highlight-text">Corte social</span>
-    </div>
-
-    <div class="highlight-box">
-        <span class="highlight-number">R$ 25</span>
-        <span class="highlight-text">Corte degradê</span>
-    </div>
-
-</div>
-
-
-<!-- SERVIÇOS -->
-
-<section class="card" id="servicos">
-
-    <h2>✂️ Serviços</h2>
-
-    <p class="section-sub">
-        Escolha seu serviço e encontre o estilo que combina com você.
-    </p>
-
-
-    <div class="service">
-
-        <div class="service-left">
-            <div class="service-icon">✂️</div>
-
-            <span class="name">
-                Corte Social
-            </span>
-        </div>
-
-        <span class="price">R$ 20,00</span>
-
-    </div>
-
-
-    <div class="service">
-
-        <div class="service-left">
-            <div class="service-icon">🔥</div>
-
-            <span class="name">
-                Corte Degradê
-            </span>
-        </div>
-
-        <span class="price">R$ 25,00</span>
-
-    </div>
-
-
-    <div class="service">
-
-        <div class="service-left">
-            <div class="service-icon">🪒</div>
-
-            <span class="name">
-                Barba
-            </span>
-        </div>
-
-        <span class="price">R$ 15,00</span>
-
-    </div>
-
-
-    <div class="service">
-
-        <div class="service-left">
-            <div class="service-icon">✨</div>
-
-            <span class="name">
-                Sobrancelha
-            </span>
-        </div>
-
-        <span class="price">R$ 15,00</span>
-
-    </div>
-
-
-    <div class="service">
-
-        <div class="service-left">
-            <div class="service-icon">💈</div>
-
-            <span class="name">
-                Corte + Sobrancelha
-            </span>
-        </div>
-
-        <span class="price">R$ 35,00</span>
-
-    </div>
-
-
-    <div class="service">
-
-        <div class="service-left">
-            <div class="service-icon">👑</div>
-
-            <span class="name">
-                Corte + Sobrancelha + Barba
-            </span>
-        </div>
-
-        <span class="price">R$ 50,00</span>
-
-    </div>
-
-</section>
-
-
-<!-- AGENDAMENTO -->
-
-<section class="card booking" id="agendamento">
-
-    <h2>📅 Agende seu horário</h2>
-
-    <p class="section-sub">
-        Escolheu o corte? Agora é só chamar a TC Barber pelo WhatsApp.
-    </p>
-
-    <a
-        class="btn whatsapp"
-        href="https://wa.me/5533998047605?text=Ol%C3%A1%20TC%20Barber!%20Quero%20agendar%20um%20hor%C3%A1rio."
-        target="_blank"
-        rel="noopener"
-    >
-        <span>💬</span>
-        AGENDAR PELO WHATSAPP
-    </a>
-
-</section>
-
-
-<!-- INFORMAÇÕES -->
-
-<section class="card">
-
-    <div class="info-row">
-
-        <span class="label">
-            📍 Endereço
-        </span>
-
-        <span class="info-value">
-            Rua José Ferino de Matos
-        </span>
-
-    </div>
-
-
-    <div class="info-row">
-
-        <span class="label">
-            🕐 Horário
-        </span>
-
-        <span class="info-value">
-            13:00 às 19:00
-        </span>
-
-    </div>
-
-
-    <div class="info-row">
-
-        <span class="label">
-            📸 Instagram
-        </span>
-
-        <a
-            class="btn instagram"
-            href="https://www.instagram.com/tc_barber_00/"
-            target="_blank"
-            rel="noopener"
-        >
-            @tc_barber_00
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- FINAL -->
-
-<div class="footer">
-
-    <strong>TC BARBER</strong>
-    <br>
-
-    Estilo, cuidado e confiança.
-
-    <br><br>
-
-    © 2026 TC Barber. Todos os direitos reservados.
-
-</div>
-
-</div>
-
-</body>
-</html>
+   
