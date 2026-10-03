@@ -1,204 +1,224 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TC Barber | Barbearia</title>
+    <title>TC Barber | Barbearia</title>
 
-<meta name="description" content="TC Barber - Seu estilo começa aqui. Agende seu horário.">
+    <meta name="description" content="TC Barber - Cortes, barba e sobrancelha. Agende seu horário pelo WhatsApp.">
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-:root{
-    --bg:#070707;
-    --bg2:#0d0d0d;
-    --card:#121212;
-    --card2:#181818;
-    --line:#292929;
-    --gold:#d7a84b;
-    --gold2:#f4d083;
-    --white:#fff;
-    --muted:#a7a7a7;
-    --green:#25d366;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b0b;
+            color: #ffffff;
+            min-height: 100vh;
+        }
 
-html{
-    scroll-behavior:smooth;
-}
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:
-        radial-gradient(circle at 50% -10%,#4a3715 0,#171107 20%,#070707 48%);
-    color:var(--white);
-    min-height:100vh;
-}
+        /* TOPO */
+        header {
+            text-align: center;
+            padding: 45px 20px 30px;
+        }
 
-body:before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    background:
-        linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
-    background-size:40px 40px;
-    mask-image:linear-gradient(to bottom,black,transparent 75%);
-}
+        .logo {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d7a84b, #f4d083);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #111;
+            font-size: 26px;
+            font-weight: bold;
+            box-shadow: 0 0 30px rgba(215, 168, 75, 0.25);
+        }
 
-.container{
-    width:min(100%,620px);
-    margin:auto;
-    padding:18px 16px 45px;
-}
+        header h1 {
+            color: #d7a84b;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
 
+        header p {
+            color: #bdbdbd;
+            font-size: 16px;
+        }
 
-/* =========================
-   HERO
-========================= */
+        /* BOTÃO WHATSAPP */
+        .whatsapp {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            margin: 25px auto;
+            padding: 16px 20px;
+            border-radius: 12px;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+            text-align: center;
+            transition: 0.2s;
+        }
 
-.hero{
-    min-height:430px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    position:relative;
-    padding:45px 10px 35px;
-}
+        .whatsapp:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
 
-.badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    border:1px solid #735a27;
-    color:var(--gold2);
-    background:#161107aa;
-    border-radius:999px;
-    padding:8px 16px;
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:2.5px;
-    margin-bottom:22px;
-    backdrop-filter:blur(8px);
-}
+        /* TÍTULOS */
+        .section-title {
+            text-align: center;
+            color: #d7a84b;
+            font-size: 27px;
+            margin: 45px 0 20px;
+        }
 
-.logo{
-    font-size:clamp(42px,13vw,70px);
-    font-weight:950;
-    letter-spacing:5px;
-    line-height:.95;
-    text-shadow:0 8px 35px #000;
-}
+        /* SERVIÇOS */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
 
-.logo span{
-    color:var(--gold);
-}
+        .service {
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 14px;
+            padding: 22px 15px;
+            text-align: center;
+        }
 
-.hero-line{
-    width:75px;
-    height:3px;
-    margin:22px auto 17px;
-    border-radius:10px;
-    background:linear-gradient(90deg,transparent,var(--gold),transparent);
-}
+        .service h3 {
+            color: white;
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
 
-.tagline{
-    color:#d0d0d0;
-    font-size:16px;
-    letter-spacing:.3px;
-    max-width:330px;
-    line-height:1.5;
-}
+        .price {
+            color: #d7a84b;
+            font-size: 23px;
+            font-weight: bold;
+        }
 
-.hero-buttons{
-    display:flex;
-    gap:10px;
-    width:100%;
-    max-width:440px;
-    margin-top:28px;
-}
+        /* DOMICÍLIO */
+        .home-service {
+            margin-top: 30px;
+            padding: 25px 20px;
+            background: #151515;
+            border: 1px solid #d7a84b;
+            border-radius: 14px;
+            text-align: center;
+        }
 
-.hero-buttons a{
-    flex:1;
-}
+        .home-service h2 {
+            color: #d7a84b;
+            margin-bottom: 10px;
+        }
 
+        .home-service p {
+            color: #cfcfcf;
+            line-height: 1.6;
+        }
 
-/* =========================
-   BOTÕES
-========================= */
+        .no-fee {
+            color: #25d366;
+            font-weight: bold;
+            margin-top: 8px;
+        }
 
-.btn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:52px;
-    padding:15px 18px;
-    border-radius:15px;
-    font-weight:900;
-    text-decoration:none;
-    transition:.25s ease;
-    cursor:pointer;
-}
+        /* INFORMAÇÕES */
+        .info {
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 14px;
+            padding: 25px;
+            margin-top: 30px;
+        }
 
-.btn:hover{
-    transform:translateY(-3px);
-}
+        .info p {
+            color: #d0d0d0;
+            margin: 12px 0;
+            line-height: 1.5;
+        }
 
-.btn-gold{
-    color:#151006;
-    background:linear-gradient(135deg,var(--gold2),var(--gold));
-    box-shadow:0 12px 30px #d7a84b25;
-}
+        .info strong {
+            color: #d7a84b;
+        }
 
-.btn-dark{
-    color:#fff;
-    border:1px solid #383838;
-    background:#151515;
-}
+        /* INSTAGRAM */
+        .instagram {
+            display: block;
+            text-align: center;
+            color: #d7a84b;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 25px 0;
+            font-size: 17px;
+        }
 
+        /* RODAPÉ */
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            color: #777;
+            font-size: 14px;
+        }
 
-/* =========================
-   CARDS
-========================= */
+        /* CELULAR */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
 
-.card{
-    background:
-        linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
-    border:1px solid var(--line);
-    border-radius:24px;
-    padding:24px;
-    margin:16px 0;
-    box-shadow:0 18px 50px #0008;
-    backdrop-filter:blur(10px);
-    animation:appear .6s ease both;
-}
+            .services {
+                grid-template-columns: 1fr;
+            }
 
-.card h2{
-    font-size:21px;
-    margin-bottom:7px;
-}
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
 
-.section-sub{
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.5;
-    margin-bottom:16px;
-}
+<body>
 
+    <header>
+        <div class="logo">TC</div>
 
-/* =========================
-   DESTAQUES
-========================= */
+        <h1>TC BARBER</h1>
 
-.highlight{
-    display:grid;
-    grid-template-columns:1fr 1fr;
+        <p>Seu estilo, nossa arte.</p>
+        <p>Cortes na régua & acabamento.</p>
+    </header>
+
+    <div class="container">
+
+        <a
+            class="whatsapp"
+            href="https://wa.me/5533998047605?text=Ol%C3%A1%20TC%20Barber!%20Quero%20agendar%20um%20hor%C3%A1rio."
+            target="_blank"
+        >
+            📲 Agendar pelo
