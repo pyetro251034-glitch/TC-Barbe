@@ -1,1672 +1,431 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>TC Barber | Seu estilo, sua marca</title>
-
-<meta name="description" content="TC Barber. Cortes, barba, sobrancelha e atendimento a domicílio sem taxa. Agende seu horário.">
-
-<style>
-
-/* =====================================================
-   RESET
-===================================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #050505;
-    color: #fff;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-
-/* =====================================================
-   VARIÁVEIS
-===================================================== */
-
-:root {
-    --black: #050505;
-    --black-2: #0b0b0b;
-    --card: rgba(255,255,255,0.045);
-    --gold: #d7b45a;
-    --gold-light: #f2d17b;
-    --white: #f7f7f7;
-    --gray: #a0a0a0;
-    --red: #c71919;
-    --blue: #174baf;
-}
-
-
-/* =====================================================
-   FUNDO GERAL
-===================================================== */
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -10;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0,0,0,.72),
-            rgba(0,0,0,.92)
-        ),
-        url("https://cdn.prod.website-files.com/67336b2139b6b0905c503a6b/67a374a94d1a70bae898ed07_golden-lights-barbershop-design-idea-1024x768.jpeg");
-
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -9;
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            circle at 15% 25%,
-            rgba(190,0,0,.15),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 85% 30%,
-            rgba(0,60,190,.15),
-            transparent 30%
-        );
-}
-
-
-/* =====================================================
-   BARRA SUPERIOR
-===================================================== */
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-
-    background: rgba(5,5,5,.72);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-.nav {
-    width: min(1150px, 92%);
-    height: 76px;
-
-    margin: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.brand-symbol {
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid var(--gold);
-    border-radius: 50%;
-
-    color: var(--gold);
-
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: -1px;
-
-    box-shadow:
-        0 0 20px rgba(215,180,90,.12);
-}
-
-.brand-name {
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: 3px;
-}
-
-.brand-name span {
-    color: var(--gold);
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.nav-links a {
-    color: #c7c7c7;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-
-    transition: .25s;
-}
-
-.nav-links a:hover {
-    color: var(--gold);
-}
-
-.nav-button {
-    padding: 11px 17px;
-
-    border: 1px solid rgba(215,180,90,.5);
-    border-radius: 7px;
-
-    color: var(--gold) !important;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-
-    padding: 130px 20px 90px;
-
-    position: relative;
-}
-
-.hero-inner {
-    width: min(1150px, 92%);
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: 1.15fr .85fr;
-    align-items: center;
-
-    gap: 70px;
-}
-
-
-/* texto */
-
-.eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-
-    color: var(--gold);
-
-    font-size: 11px;
-    font-weight: 800;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 22px;
-}
-
-.eyebrow::before {
-    content: "";
-
-    width: 32px;
-    height: 1px;
-
-    background: var(--gold);
-}
-
-.hero h1 {
-    font-size: clamp(55px, 8vw, 105px);
-
-    line-height: .88;
-
-    letter-spacing: -5px;
-
-    text-transform: uppercase;
-}
-
-.hero h1 .gold {
-    color: var(--gold);
-}
-
-.hero-description {
-    max-width: 570px;
-
-    margin-top: 28px;
-
-    color: #b5b5b5;
-
-    font-size: 17px;
-    line-height: 1.8;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 13px;
-
-    margin-top: 34px;
-}
-
-
-/* botões */
-
-.btn {
-    min-height: 52px;
-
-    padding: 0 24px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 8px;
-
-    font-size: 12px;
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-    transition: .3s;
-}
-
-.btn-gold {
-    color: #090909;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--gold-light),
-            var(--gold)
-        );
-
-    box-shadow:
-        0 12px 35px rgba(215,180,90,.18);
-}
-
-.btn-gold:hover {
-    transform: translateY(-3px);
-    box-shadow:
-        0 16px 40px rgba(215,180,90,.27);
-}
-
-.btn-outline {
-    color: #fff;
-
-    border: 1px solid rgba(255,255,255,.18);
-
-    background: rgba(255,255,255,.04);
-}
-
-.btn-outline:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-}
-
-
-/* =====================================================
-   LOGO GRANDE
-===================================================== */
-
-.logo-stage {
-    min-height: 430px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-}
-
-.logo-glow {
-    position: absolute;
-
-    width: 330px;
-    height: 330px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(215,180,90,.13),
-            transparent 68%
-        );
-
-    filter: blur(5px);
-}
-
-.big-logo {
-    position: relative;
-
-    display: flex;
-    align-items: center;
-
-    gap: 9px;
-
-    padding: 35px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(215,180,90,.38);
-
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(255,255,255,.08),
-            rgba(0,0,0,.6) 65%
-        );
-
-    box-shadow:
-        0 30px 100px rgba(0,0,0,.7),
-        inset 0 0 50px rgba(255,255,255,.025);
-}
-
-.big-letter {
-    font-size: 115px;
-
-    line-height: .8;
-
-    font-weight: 900;
-
-    letter-spacing: -10px;
-}
-
-.pole {
-    width: 34px;
-    height: 108px;
-
-    border-radius: 20px;
-
-    border: 2px solid #d7b45a;
-
-    background:
-        repeating-linear-gradient(
-            -45deg,
-            #f5f5f5 0px,
-            #f5f5f5 9px,
-            #d31515 9px,
-            #d31515 18px,
-            #f5f5f5 18px,
-            #f5f5f5 27px,
-            #194aa5 27px,
-            #194aa5 36px
-        );
-
-    box-shadow:
-        0 0 25px rgba(215,180,90,.18);
-}
-
-
-/* =====================================================
-   MINI INFORMAÇÕES
-===================================================== */
-
-.hero-details {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    margin-top: 30px;
-}
-
-.detail {
-    padding: 10px 13px;
-
-    border-radius: 6px;
-
-    background: rgba(255,255,255,.04);
-
-    border: 1px solid rgba(255,255,255,.07);
-
-    color: #a7a7a7;
-
-    font-size: 11px;
-    font-weight: 700;
-
-    letter-spacing: 1px;
-}
-
-
-/* =====================================================
-   SEÇÕES
-===================================================== */
-
-section {
-    padding: 110px 20px;
-}
-
-.container {
-    width: min(1100px, 92%);
-    margin: auto;
-}
-
-.section-top {
-    margin-bottom: 48px;
-}
-
-.section-label {
-    color: var(--gold);
-
-    font-size: 10px;
-    font-weight: 800;
-
-    letter-spacing: 4px;
-}
-
-.section-title {
-    margin-top: 12px;
-
-    font-size: clamp(34px, 5vw, 52px);
-
-    letter-spacing: -2px;
-}
-
-.section-description {
-    max-width: 550px;
-
-    margin-top: 14px;
-
-    color: #8f8f8f;
-
-    line-height: 1.7;
-}
-
-
-/* =====================================================
-   SERVIÇOS
-===================================================== */
-
-.services-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 14px;
-}
-
-.service {
-    min-height: 190px;
-
-    padding: 28px;
-
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    border-radius: 14px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.07),
-            rgba(255,255,255,.025)
-        );
-
-    border: 1px solid rgba(255,255,255,.09);
-
-    overflow: hidden;
-
-    transition: .3s;
-}
-
-.service:hover {
-    transform: translateY(-6px);
-
-    border-color:
-        rgba(215,180,90,.45);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(215,180,90,.09),
-            rgba(255,255,255,.025)
-        );
-}
-
-.service-number {
-    position: absolute;
-
-    right: 20px;
-    top: 15px;
-
-    font-size: 42px;
-
-    font-weight: 900;
-
-    color: rgba(255,255,255,.035);
-}
-
-.service-name {
-    font-size: 17px;
-
-    font-weight: 700;
-
-    max-width: 180px;
-
-    line-height: 1.4;
-}
-
-.service-bottom {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-}
-
-.service-price {
-    color: var(--gold);
-
-    font-size: 29px;
-
-    font-weight: 900;
-}
-
-.service-arrow {
-    color: #555;
-
-    font-size: 20px;
-}
-
-
-/* =====================================================
-   DOMICÍLIO
-===================================================== */
-
-.home-section {
-    position: relative;
-
-    overflow: hidden;
-}
-
-.home-box {
-    position: relative;
-
-    padding: 65px 55px;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    border: 1px solid rgba(215,180,90,.28);
-
-    background:
-        linear-gradient(
-            110deg,
-            rgba(215,180,90,.12),
-            rgba(255,255,255,.035)
-        );
-}
-
-.home-box::before {
-    content: "";
-
-    position: absolute;
-
-    width: 420px;
-    height: 420px;
-
-    right: -180px;
-    top: -180px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(215,180,90,.2),
-            transparent 68%
-        );
-}
-
-.home-content {
-    position: relative;
-
-    max-width: 680px;
-}
-
-.home-badge {
-    display: inline-block;
-
-    padding: 8px 12px;
-
-    margin-bottom: 20px;
-
-    border-radius: 5px;
-
-    color: var(--gold);
-
-    background: rgba(215,180,90,.08);
-
-    border: 1px solid rgba(215,180,90,.2);
-
-    font-size: 10px;
-    font-weight: 800;
-
-    letter-spacing: 2px;
-}
-
-.home-box h2 {
-    font-size: clamp(34px, 5vw, 55px);
-
-    line-height: 1;
-
-    letter-spacing: -2px;
-}
-
-.home-box h2 span {
-    color: var(--gold);
-}
-
-.home-box p {
-    margin-top: 18px;
-
-    color: #aaa;
-
-    line-height: 1.8;
-
-    max-width: 600px;
-}
-
-.home-list {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    margin: 25px 0;
-}
-
-.home-list span {
-    padding: 9px 12px;
-
-    border: 1px solid rgba(255,255,255,.1);
-
-    border-radius: 6px;
-
-    color: #ccc;
-
-    font-size: 11px;
-}
-
-
-/* =====================================================
-   COMO FUNCIONA
-===================================================== */
-
-.steps {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 15px;
-}
-
-.step {
-    padding: 30px;
-
-    border-top: 1px solid rgba(215,180,90,.35);
-
-    background: rgba(255,255,255,.025);
-}
-
-.step-number {
-    color: var(--gold);
-
-    font-size: 12px;
-    font-weight: 900;
-
-    letter-spacing: 2px;
-}
-
-.step h3 {
-    margin-top: 18px;
-
-    font-size: 19px;
-}
-
-.step p {
-    margin-top: 10px;
-
-    color: #888;
-
-    line-height: 1.7;
-
-    font-size: 14px;
-}
-
-
-/* =====================================================
-   INSTAGRAM
-===================================================== */
-
-.instagram-section {
-    text-align: center;
-}
-
-.instagram-box {
-    padding: 70px 25px;
-
-    border-radius: 20px;
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(215,180,90,.1),
-            transparent 55%
-        ),
-        rgba(255,255,255,.025);
-
-    border: 1px solid rgba(255,255,255,.08);
-}
-
-.instagram-icon {
-    width: 58px;
-    height: 58px;
-
-    margin: 0 auto 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 16px;
-
-    border: 1px solid rgba(215,180,90,.45);
-
-    color: var(--gold);
-
-    font-size: 25px;
-}
-
-.instagram-box h2 {
-    font-size: 36px;
-}
-
-.instagram-box p {
-    margin-top: 12px;
-
-    color: #888;
-}
-
-.instagram-handle {
-    display: inline-block;
-
-    margin-top: 25px;
-
-    color: var(--gold);
-
-    font-size: 18px;
-    font-weight: 800;
-
-    letter-spacing: 1px;
-}
-
-
-/* =====================================================
-   CTA FINAL
-===================================================== */
-
-.final-cta {
-    text-align: center;
-
-    padding-top: 40px;
-}
-
-.final-cta h2 {
-    font-size: clamp(38px, 6vw, 65px);
-
-    line-height: 1;
-
-    letter-spacing: -3px;
-}
-
-.final-cta p {
-    max-width: 500px;
-
-    margin: 18px auto 28px;
-
-    color: #8c8c8c;
-
-    line-height: 1.7;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-    padding: 35px 20px;
-
-    border-top: 1px solid rgba(255,255,255,.07);
-
-    text-align: center;
-
-    color: #555;
-
-    font-size: 12px;
-}
-
-footer strong {
-    color: var(--gold);
-}
-
-
-/* =====================================================
-   WHATSAPP FLUTUANTE
-===================================================== */
-
-.whatsapp {
-    position: fixed;
-
-    right: 20px;
-    bottom: 20px;
-
-    z-index: 500;
-
-    width: 57px;
-    height: 57px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #20c76b;
-
-    color: white;
-
-    font-size: 23px;
-    font-weight: 900;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.45);
-
-    transition: .3s;
-}
-
-.whatsapp:hover {
-    transform: scale(1.08);
-}
-
-
-/* =====================================================
-   RESPONSIVO
-===================================================== */
-
-@media (max-width: 850px) {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05080f">
+  <meta name="description" content="TC-Barbe — Seu estilo, suas regras. Confira os preços e agende seu horário.">
+  <title>TC-Barbe | Barbearia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #05080f;
+      --surface: #0c1220;
+      --blue: #087cff;
+      --light-blue: #38a0ff;
+      --white: #f4f7ff;
+      --muted: #a3aec2;
+      --border: rgba(56,160,255,.25);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: Inter, sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: min(1100px, 90%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(5,8,15,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font: 900 2rem "Barlow Condensed", sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .logo span { color: var(--light-blue); }
 
     .nav-links {
-        display: none;
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      color: var(--muted);
+      font-size: .9rem;
     }
 
-    .nav {
-        justify-content: center;
-    }
-
-    .hero-inner {
-        grid-template-columns: 1fr;
-
-        text-align: center;
-
-        gap: 30px;
-    }
-
-    .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-buttons,
-    .hero-details {
-        justify-content: center;
-    }
-
-    .eyebrow {
-        justify-content: center;
-    }
-
-    .logo-stage {
-        min-height: 330px;
-
-        order: -1;
-    }
-
-    .big-logo {
-        transform: scale(.78);
-    }
-
-    .services-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .steps {
-        grid-template-columns: 1fr;
-    }
-
-    .home-box {
-        padding: 45px 28px;
-    }
-}
-
-
-@media (max-width: 550px) {
-
-    .brand-name {
-        font-size: 12px;
-        letter-spacing: 2px;
-    }
-
-    .hero {
-        padding-top: 115px;
-    }
-
-    .hero h1 {
-        font-size: 58px;
-
-        letter-spacing: -3px;
-    }
-
-    .hero-description {
-        font-size: 15px;
-    }
-
-    .logo-stage {
-        min-height: 280px;
-    }
-
-    .big-logo {
-        transform: scale(.6);
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service {
-        min-height: 165px;
-    }
-
-    section {
-        padding: 80px 18px;
-    }
-
-    .section-title {
-        font-size: 37px;
-    }
-
-    .home-box h2 {
-        font-size: 37px;
-    }
+    .nav-links a:hover { color: var(--light-blue); }
 
     .btn {
-        width: 100%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border: 1px solid var(--blue);
+      border-radius: 8px;
+      background: var(--blue);
+      color: white;
+      font-weight: 700;
+      text-align: center;
+      transition: .2s ease;
+      cursor: pointer;
     }
 
-    .hero-buttons {
-        width: 100%;
+    .btn:hover {
+      background: var(--light-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(8,124,255,.2);
     }
 
-    .hero-buttons .btn {
-        width: 100%;
+    .btn-outline { background: transparent; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0;
+      background:
+        radial-gradient(ellipse at 85% 30%, rgba(8,124,255,.2), transparent 45%),
+        linear-gradient(135deg, #05080f, #0b1425);
     }
 
-    .whatsapp {
-        width: 53px;
-        height: 53px;
-
-        right: 15px;
-        bottom: 15px;
+    .hero::after {
+      content: "TC";
+      position: absolute;
+      right: 4%;
+      top: 4%;
+      font: 900 clamp(200px, 35vw, 430px)/1 "Barlow Condensed", sans-serif;
+      color: rgba(56,160,255,.05);
+      pointer-events: none;
     }
-}
 
-</style>
+    .hero-content { position: relative; z-index: 1; max-width: 720px; }
+
+    .eyebrow {
+      color: var(--light-blue);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: "Barlow Condensed", sans-serif;
+      line-height: 1.08;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 20px 0;
+      font-size: clamp(3.7rem, 10vw, 7rem);
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    h1 span { display: block; color: var(--light-blue); }
+
+    .hero p, .section-heading p, .booking p {
+      color: var(--muted);
+    }
+
+    .hero p { max-width: 530px; margin-bottom: 28px; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .section { padding: 80px 0; }
+
+    .section-heading { text-align: center; margin-bottom: 40px; }
+
+    .section-heading h2, .booking h2 {
+      margin: 12px 0;
+      font-size: clamp(2.8rem, 6vw, 4rem);
+    }
+
+    .section-heading p { max-width: 580px; margin: auto; }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 26px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: .25s ease;
+    }
+
+    .service-card:hover {
+      border-color: var(--blue);
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 16px;
+      border-radius: 12px;
+      background: rgba(8,124,255,.12);
+      color: var(--light-blue);
+      font-size: 1.6rem;
+    }
+
+    .service-card h3 { font-size: 1.7rem; margin-bottom: 8px; }
+    .service-card p { color: var(--muted); font-size: .93rem; }
+
+    .prices-section { background: linear-gradient(#080d17, #05080f); }
+
+    .price-list {
+      max-width: 760px;
+      margin: auto;
+      padding: clamp(20px, 5vw, 40px);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.2);
+    }
+
+    .price-group + .price-group {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .price-group h3 {
+      margin-bottom: 12px;
+      color: var(--light-blue);
+      font-size: 1.8rem;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 13px 0;
+      border-bottom: 1px dashed rgba(163,174,194,.2);
+    }
+
+    .price-row:last-child { border-bottom: 0; }
+    .price-row strong { color: var(--light-blue); white-space: nowrap; }
+
+    .booking {
+      padding: 85px 0;
+      text-align: center;
+      background: radial-gradient(ellipse at center, rgba(8,124,255,.16), transparent 65%);
+    }
+
+    .booking p { max-width: 530px; margin: 0 auto 26px; }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      font-size: .86rem;
+    }
+
+    footer strong { color: var(--white); }
+
+    .whatsapp-float {
+      position: fixed;
+      z-index: 20;
+      right: 18px;
+      bottom: 18px;
+      border-radius: 50px;
+      box-shadow: 0 5px 25px rgba(0,0,0,.4);
+    }
+
+    @media (max-width: 700px) {
+      .nav-links { gap: 12px; font-size: .82rem; }
+      .nav-links .nav-price { display: none; }
+      .nav-links .btn { padding: 10px 12px; }
+      .services { grid-template-columns: 1fr; }
+      .hero { padding: 75px 0; }
+      .section { padding: 62px 0; }
+    }
+
+    @media (max-width: 390px) {
+      .logo { font-size: 1.55rem; }
+      .nav-links { gap: 8px; }
+      .nav-links .btn { padding: 9px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
 </head>
 
-
 <body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#inicio" aria-label="TC-Barbe - início">
+        TC<span>-BARBE</span>
+      </a>
 
-
-<!-- =====================================================
-     MENU
-===================================================== -->
-
-<header>
-
-    <nav class="nav">
-
-        <a href="#" class="brand">
-
-            <div class="brand-symbol">
-                TC
-            </div>
-
-            <div class="brand-name">
-                TC <span>BARBER</span>
-            </div>
-
-        </a>
-
-
-        <div class="nav-links">
-
-            <a href="#servicos">
-                SERVIÇOS
-            </a>
-
-            <a href="#domicilio">
-                DOMICÍLIO
-            </a>
-
-            <a href="#instagram">
-                INSTAGRAM
-            </a>
-
-            <a
-                href="https://wa.me/5533998047605?text=Olá%20TC%20Barber!%20Quero%20agendar%20um%20horário."
-                class="nav-button"
-            >
-                AGENDAR
-            </a>
-
-        </div>
-
+      <div class="nav-links">
+        <a href="#servicos">Serviços</a>
+        <a class="nav-price" href="#precos">Preços</a>
+        <a class="btn" href="#agendar">Agendar ↗</a>
+      </div>
     </nav>
-
-</header>
-
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero">
-
-    <div class="hero-inner">
-
-
-        <div>
-
-            <div class="eyebrow">
-                BARBEARIA • ESTILO • PRECISÃO
-            </div>
-
-
-            <h1>
-                SEU<br>
-                <span class="gold">ESTILO.</span><br>
-                SUA MARCA.
-            </h1>
-
-
-            <p class="hero-description">
-
-                A TC Barber leva o cuidado de uma barbearia
-                profissional até você. Corte, barba e
-                acabamento feitos nos detalhes.
-
-            </p>
-
-
-            <div class="hero-buttons">
-
-                <a
-                    href="https://wa.me/5533998047605?text=Olá%20TC%20Barber!%20Quero%20agendar%20um%20horário."
-                    class="btn btn-gold"
-                >
-                    AGENDAR PELO WHATSAPP
-                </a>
-
-
-                <a
-                    href="#servicos"
-                    class="btn btn-outline"
-                >
-                    VER SERVIÇOS
-                </a>
-
-            </div>
-
-
-            <div class="hero-details">
-
-                <span class="detail">
-                    ATENDIMENTO A DOMICÍLIO
-                </span>
-
-                <span class="detail">
-                    SEM TAXA
-                </span>
-
-                <span class="detail">
-                    13H ÀS 19H
-                </span>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- LOGO -->
-
-        <div class="logo-stage">
-
-            <div class="logo-glow"></div>
-
-            <div class="big-logo">
-
-                <div class="big-letter">
-                    T
-                </div>
-
-                <div class="pole"></div>
-
-                <div class="big-letter">
-                    C
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     SERVIÇOS
-===================================================== -->
-
-<section id="servicos">
-
-    <div class="container">
-
-        <div class="section-top">
-
-            <div class="section-label">
-                SERVIÇOS
-            </div>
-
-            <h2 class="section-title">
-                Na régua.
-            </h2>
-
-            <p class="section-description">
-                Serviços pensados para deixar seu visual
-                alinhado, do corte ao acabamento.
-            </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-
-            <div class="service">
-
-                <span class="service-number">
-                    01
-                </span>
-
-                <div class="service-name">
-                    Corte Social
-                </div>
-
-                <div class="service-bottom">
-
-                    <div class="service-price">
-                        R$ 20
-                    </div>
-
-                    <div class="service-arrow">
-                        →
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="service">
-
-                <span class="service-number">
-                    02
-                </span>
-
-                <div class="service-name">
-                    Corte Degradê
-                </div>
-
-                <div class="service-bottom">
-
-                    <div class="service-price">
-                        R$ 25
-                    </div>
-
-                    <div class="service-arrow">
-                        →
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="service">
-
-                <span class="service-number">
-                    03
-                </span>
-
-                <div class="service-name">
-                    Barba
-                </div>
-
-                <div class="service-bottom">
-
-                    <div class="service-price">
-                        R$ 15
-                    </div>
-
-                    <div class="service-arrow">
-                        →
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="service">
-
-                <span class="service-number">
-                    04
-                </span>
-
-                <div class="service-name">
-                    Sobrancelha
-                </div>
-
-                <div class="service-bottom">
-
-                    <div class="service-price">
-                        R$ 7
-                    </div>
-
-                    <div class="service-arrow">
-                        →
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="service">
-
-                <span class="service-number">
-                    05
-                </span>
-
-                <div class="service-name">
-                    Corte + Sobrancelha
-                </div>
-
-                <div class="service-bottom">
-
-                    <div class="service-price">
-                        R$ 30
-                    </div>
-
-                    <div class="service-arrow">
-                        →
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="service">
-
-                <span class="service-number">
-                    06
-                </span>
-
-                <div class="service-name">
-                    Corte + Sobrancelha + Barba
-                </div>
-
-                <div class="service-bottom">
-
-                    <div class="service-price">
-                        R$ 50
-                    </div>
-
-                    <div class="service-arrow">
-                        →
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DOMICÍLIO
-===================================================== -->
-
-<section id="domicilio" class="home-section">
-
-    <div class="container">
-
-        <div class="home-box">
-
-            <div class="home-content">
-
-                <div class="home-badge">
-                    TC BARBER EM MOVIMENTO
-                </div>
-
-
-                <h2>
-                    Seu corte.<br>
-                    <span>Onde você estiver.</span>
-                </h2>
-
-
-                <p>
-
-                    A TC Barber atende a domicílio para você
-                    não precisar sair de casa. Você agenda,
-                    combinamos o horário e o atendimento vai
-                    até você.
-
-                </p>
-
-
-                <div class="home-list">
-
-                    <span>
-                        ATENDIMENTO A DOMICÍLIO
-                    </span>
-
-                    <span>
-                        SEM TAXA ADICIONAL
-                    </span>
-
-                    <span>
-                        AGENDAMENTO PELO WHATSAPP
-                    </span>
-
-                </div>
-
-
-                <a
-                    href="https://wa.me/5533998047605?text=Olá%20TC%20Barber!%20Quero%20agendar%20um%20horário%20a%20domicílio."
-                    class="btn btn-gold"
-                >
-                    AGENDAR DOMICÍLIO
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     COMO FUNCIONA
-===================================================== -->
-
-<section>
-
-    <div class="container">
-
-        <div class="section-top">
-
-            <div class="section-label">
-                AGENDAMENTO
-            </div>
-
-            <h2 class="section-title">
-                Simples assim.
-            </h2>
-
-        </div>
-
-
-        <div class="steps">
-
-
-            <div class="step">
-
-                <div class="step-number">
-                    01 / AGENDAMENTO
-                </div>
-
-                <h3>
-                    Chame no WhatsApp
-                </h3>
-
-                <p>
-                    Entre em contato e diga qual serviço
-                    você deseja.
-                </p>
-
-            </div>
-
-
-
-            <div class="step">
-
-                <div class="step-number">
-                    02 / HORÁRIO
-                </div>
-
-                <h3>
-                    Combine o horário
-                </h3>
-
-                <p>
-                    Definimos juntos o melhor horário
-                    para o atendimento.
-                </p>
-
-            </div>
-
-
-
-            <div class="step">
-
-                <div class="step-number">
-                    03 / CORTE
-                </div>
-
-                <h3>
-                    Só chegar na régua
-                </h3>
-
-                <p>
-                    Atendimento com foco no acabamento
-                    e nos detalhes do seu estilo.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     INSTAGRAM
-===================================================== -->
-
-<section id="instagram" class="instagram-section">
-
-    <div class="container">
-
-        <div class="instagram-box">
-
-            <div class="instagram-icon">
-                @
-            </div>
-
-
-            <h2>
-                Acompanhe a TC Barber
-            </h2>
-
-
-            <p>
-                Veja nossos trabalhos e acompanhe as novidades.
-            </p>
-
-
-            <a
-                href="https://www.instagram.com/tc_barber_00/"
-                target="_blank"
-                class="instagram-handle"
-            >
-                @tc_barber_00
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CTA FINAL
-===================================================== -->
-
-<section class="final-cta">
-
-    <div class="container">
-
-        <h2>
-            VAMOS MARCAR?
-        </h2>
-
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <div class="eyebrow">Barbearia · Estilo · Atitude</div>
+        <h1>Seu estilo.<span>Suas regras.</span></h1>
         <p>
-            Escolha seu serviço e fale com a TC Barber
-            para encontrar um horário.
+          Mais que um corte, uma experiência.
+          Conheça os serviços da TC-Barbe e encontre seu próximo visual.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#agendar">✂ Agendar meu horário</a>
+          <a class="btn btn-outline" href="#precos">Ver preços</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Qual é o seu estilo?</div>
+          <h2>Nossos serviços</h2>
+          <p>Cuidado com os detalhes, estilo e atenção em cada atendimento.</p>
+        </div>
+
+        <div class="services">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">✂</div>
+            <h3>Cortes</h3>
+            <p>Corte normal, degradê e corte infantil para diferentes estilos.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">♛</div>
+            <h3>Barba</h3>
+            <p>Um acabamento bem cuidado para completar seu visual.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">✦</div>
+            <h3>Acabamentos</h3>
+            <p>Sobrancelha e risco para dar aquele toque final.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section prices-section" id="precos">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Valores transparentes</div>
+          <h2>Tabela de preços</h2>
+          <p>Escolha seu serviço e entre em contato para agendar.</p>
+        </div>
+
+        <div class="price-list">
+          <div class="price-group">
+            <h3>✂ Cortes</h3>
+            <div class="price-row"><span>Corte normal</span><strong>R$ 20,00</strong></div>
+            <div class="price-row"><span>Degradê</span><strong>R$ 25,00</strong></div>
+            <div class="price-row"><span>Corte infantil</span><strong>R$ 15,00</strong></div>
+          </div>
+
+          <div class="price-group">
+            <h3>♛ Barba</h3>
+            <div class="price-row"><span>Barba</span><strong>R$ 15,00</strong></div>
+          </div>
+
+          <div class="price-group">
+            <h3>✦ Acabamentos e combos</h3>
+            <div class="price-row"><span>Sobrancelha</span><strong>R$ 7,00</strong></div>
+            <div class="price-row"><span>Risco</span><strong>R$ 5,00</strong></div>
+            <div class="price-row"><span>Corte + barba</span><strong>R$ 30,00</strong></div>
+          </div>
+
+          <div style="text-align:center;margin-top:30px">
+            <a class="btn" href="https://wa.me/5533998047605?text=Olá%21%20Quero%20agendar%20um%20horário%20na%20TC-Barbe.">
+              Agendar pelo WhatsApp ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="agendar">
+      <div class="container">
+        <div class="eyebrow">Seu próximo visual começa aqui</div>
+        <h2>Partiu dar um talento?</h2>
+        <p>
+          Chama a TC-Barbe pelo WhatsApp para combinar seu atendimento.
+          Acompanhe também nosso trabalho pelo Instagram.
         </p>
 
+        <div class="social-links">
+          <a class="btn"
+             href="https://wa.me/5533998047605?text=Olá%21%20Quero%20agendar%20um%20horário%20na%20TC-Barbe."
+             target="_blank" rel="noopener noreferrer">
+            WhatsApp · Agendar
+          </a>
 
-        <a
-            href="https://wa.me/5533998047605?text=Olá%20TC%20Barber!%20Quero%20agendar%20um%20horário."
-            class="btn btn-gold"
-        >
-            AGENDAR MEU CORTE
-        </a>
+          <a class="btn btn-outline"
+             href="https://www.instagram.com/tc_barbar_00/"
+             target="_blank" rel="noopener noreferrer">
+            Instagram · @tc_barbar_00
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <footer>
+    <div class="container">
+      <strong>TC-Barbe</strong> · Estilo e atitude.<br>
+      © <span id="year"></span> TC-Barbe. Todos os direitos reservados.
     </div>
+  </footer>
 
-</section>
+  <a class="btn whatsapp-float"
+     href="https://wa.me/5533998047605?text=Olá%21%20Quero%20agendar%20um%20horário%20na%20TC-Barbe."
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Agendar pelo WhatsApp">
+    WhatsApp ↗
+  </a>
 
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <p>
-        © 2026 <strong>TC BARBER</strong>
-        • Estilo em cada detalhe.
-    </p>
-
-</footer>
-
-
-
-<!-- =====================================================
-     WHATSAPP FLUTUANTE
-===================================================== -->
-
-<a
-    href="https://wa.me/5533998047605?text=Olá%20TC%20Barber!%20Quero%20agendar%20um%20horário."
-    class="whatsapp"
-    aria-label="Agendar pelo WhatsApp"
->
-    W
-</a>
-
-
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
-    </html>
+</html>
